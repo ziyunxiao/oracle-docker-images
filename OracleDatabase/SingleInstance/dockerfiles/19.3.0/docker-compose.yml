@@ -7,12 +7,14 @@ networks:
   oracle-private: {}
 
 # build image
-# ./buildContainerImage.sh -e -v 19.3.0 -o '--build-arg SLIMMING=false'
+# cd 19.3.0
+#  wget https://download.oracle.com/otn/linux/oracle19c/190000/LINUX.X64_193000_db_home.zip
+# ../buildContainerImage.sh -e -v 19.3.0 -t cityofedmonton/oracle-db:19.3.0ee
 
 services:
   oradb:
     container_name: oradb1930
-    image: cityofedmonton/oracle-db:19.3.0
+    image: cityofedmonton/oracle-db:19.3.0ee
     environment:
       - ORACLE_SID=oradb
       - ORACLE_PDB=testdb
